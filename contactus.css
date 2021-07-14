@@ -1,0 +1,245 @@
+body{
+	background:url(theatre7.jpg);
+	background-size:cover;
+}
+
+
+.con1{
+	box-sizing:borderbox;
+	transform:translate(-50% -50%);
+	width:500px;
+	height:auto;
+	top:100px;
+	left:370px;
+	background:white;
+	color:black;
+	position:absolute;
+	border-radius:15px;
+	opacity:0.8;
+	padding:40px 40px;
+	color: black;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.con1 input{
+	width:100%;
+	height:30px;
+	background:transparent;
+	color:black;
+	font-size:15px;
+	
+}
+
+.con1 input[type="submit"]{
+	background:#024d66;
+}
+
+.con1 input[type="submit"]:hover{
+	font-size:14px;
+	background:#0099cc;
+}
+
+*
+{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color:#cce0ff;
+}
+
+.list1 
+{
+	background:#00264d;
+	text-align: left;
+	color:aliceblue;
+}
+
+.list1 ul{
+	display: inline-flex;
+	list-style:none;
+	color:aliceblue;
+	height:60px;
+}
+
+.list1 input[type="submit"]{
+	background:transparent;
+	outline:none;
+	border:none;
+	outline:none;
+	color:aliceblue;
+	font-size:15px;
+	}
+	
+.list1 ul li a{
+	text-decoration:none;
+	display: inline-flex;
+	list-style:none;
+	color:aliceblue;
+	height:60px;
+	font-size:18px;
+}
+	
+	
+.list1 input[type="button"]{
+	background:transparent;
+	outline:none;
+	border:none;
+	outline:none;
+	color:aliceblue;
+	font-size:15px;
+	}	
+	
+.list1 input{
+	
+	height:35px;
+	font-size:14px;
+	margin-top:15px;
+}
+
+.detactive{
+	margin-top:23px;
+}
+
+.list input[type="text"]{
+	background:aliceblue;
+	border-radius:4px;
+}
+
+.list1 ul li:hover{
+	cursor:pointer;
+	background:none;
+	color:white;	
+}
+
+.list1 ul li:hover .list2{
+	display:block;
+	position:absolute;
+	background-color:#00264d;
+	margin-top:15px;
+	margin-left:15px;
+	height:100px;	
+}
+
+.list1 ul li:hover .list2 ul
+{
+	display:block;
+	margin:10px;
+}
+
+.list1 ul li:hover .list2 ul li{
+	width:150px;
+	padding:10px;
+	border-bottom:1px dotted white;
+	border-radius:0;
+	text-align:left;
+}
+
+.menu-bar ul li:hover .sub-menu ul li a:hover{
+	color:white;
+}
+
+.list2{
+	display:none;
+}
+
+.menu2{
+	background:#001a33;
+	text-align: left;
+	color:aliceblue;
+}
+
+.menu2 ul{
+	display: inline-flex;
+	list-style:none;
+	color:aliceblue;
+	height:30px;
+}
+
+.menu2 ul li{
+	margin:4px;
+	padding:6px;
+	width:90px;
+}
+
+.menu2 ul li a{
+	text-decoration:none;
+	color:lavender;
+}
+
+.menu2 ul li a:hover{
+	cursor:pointer;
+	color:white;
+	background:none;
+}
+
+.footer 
+{
+	margin-top:600px;
+	background:#00264d;
+	text-align: left;
+	color:aliceblue;
+}
+
+.footer ul{
+	display: inline-flex;
+	list-style:none;
+	margin-top:20px;
+	color:aliceblue;
+	height:40px;
+}
+
+.footer ul li a{
+	text-decoration:none;
+	display: inline-flex;
+	border: 1px solid crimson;
+	background:crimson;
+	list-style:none;
+	color:aliceblue;
+	font-size:18px;
+	border-radius:4px;
+	height:30px;
+	width:80px;
+}
+
+.footer ul li a:hover{
+	cursor:pointer;
+	color:aliceblue;
+	background:crimson;
+	font-size:17px;
+	height:25px;
+	width:70px;
+}
+
+.footer2{
+	background:#001a33;
+	text-align: left;
+	color:aliceblue;
+}
+
+.footer2 ul li a{
+	text-decoration:none;
+	color:aliceblue;
+}
+
+.footer2 ul{
+	display: inline-flex;
+	list-style:none;
+	margin-top:20px;
+	color:aliceblue;
+	height:80px;
+}
+
+.footer2 ul li{
+	margin:4px;
+	padding:6px;
+	width:90px;
+}
+
+.footer2 ul li a:hover{
+	font-size:15px;
+	color:white;
+}	
+
+

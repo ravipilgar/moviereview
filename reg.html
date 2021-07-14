@@ -1,0 +1,220 @@
+<! DOCTYPE html>
+<head>
+    <title>Form Validation Using jquery</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="Keywords" content="html, body, p">
+<meta name="author" content="Ravikiran">
+<meta name="Description" content="Html 4 basic tags">
+<script src="./jquery-3.6.0.js"></script>
+<script src="./jquery-3.6.0.min.js"></script>
+<style>
+    #boddy{
+         height: 100%;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background-image: url(./img/back.webp);
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;}
+
+  @keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+    }
+
+    #div1{
+        margin-top: 100px;
+    margin-left: 500px;
+    }
+
+    #regform{   
+        
+  
+    background-color: rgba(75, 0, 130,0.3);    
+  justify-content: center;
+  width: 350px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+   label{
+    font-size: 17px;
+  font-weight: 520;
+  margin-top: 5px;
+   }
+   span{
+       color: red;
+       font-size: 14px;
+       font-weight: 500;
+   }
+   #firstname1,#pass,#cpass,#mobile{
+       width: 100%;
+       margin-top: 3px;
+       width: 300px;
+   }
+
+</style>
+</head>
+<html>
+    <body id="boddy">
+   <div id="div1">
+
+    <form  id="regform" action="./Login.html" novalidate >
+        <div style="background-color: indigo; font-size: 25px;
+        font-weight: 500; position: relative; height: 10%;"><h3 style="color: white; text-align: center; padding-top: 15px;" ><b>Registraion Form</b></h3></div>
+       <br><div style="padding-left: 10%;"> 
+       <div class="block">
+        <label for="fname">Firstname</label><br>
+        <input type="text"  id="firstname1" placeholder="Enter Firstname">
+       <b><span id="error1"></span></b><br><br>
+
+       </div>
+
+      <div class="block"> <label for="password">passowrd</label><br>
+        <input type="password"  id="pass"placeholder="Enter Password ">
+       <b> <span id="error2"></span></b><br><br>
+        </div>
+
+        <div class="block"><label for="confirm password"  >confirm passowrd</label><br>
+            <input type="password"  id="cpass" placeholder="confirm Password ">
+            <b><span id="error3"></span></b><br><br>
+        </div>
+
+      
+    <div class="block"> <label for="mob">Mobile<br></label><input type="text" id="mobile" placeholder="Mobile Number">
+        <b><span id="error4"></span><br>
+            <span id="error5"></span></b><br> </div>
+      
+       
+       <label> show passowrd</label><input type="checkbox" id="showp"><br>
+            <h5 style="color: white;"> Already Registred <a href="./login.html"><span>Click Here</span></a></h5>
+    <input type="submit" value="Register" style="margin-left: 200px; color: aliceblue; background-color: indigo;  font-size: 14px;
+      font-weight: 500; padding: 5px;"></div><br> 
+ 
+</form>
+</div>
+
+        <script>
+
+            $(document).ready(function(){
+            
+                   
+                    $("#firstname1").blur(function(){
+                        validation1new();
+                    });
+                    $("#pass").blur(function(){
+                        validation2new();
+                    });
+                    $("#cpass").blur(function(){
+                        validation3new();
+                    });
+                    $("#mobile").blur(function(){
+                        validation4new();
+                    });
+              
+                     $('#regform').submit(function(){
+                    let state1=validation1new();
+                    let state2=validation2new();
+                    let state3=validation3new();
+                    let state4=validation4new();
+                    console.log("inside");
+                  
+
+                    if(state1 && state2 && state3 && state4 )
+                        {
+                    return true;
+                    console.log("true");}
+                    else {
+                    return false;
+                    console.log("false");
+                    }
+                });
+            });
+               
+                $('#showp').click(function(){
+                    let checkbox=$('#showp');
+                    if(checkbox.prop('checked')==true){
+                        $('#pass').attr("type","text");
+                        $('#cpass').attr("type","text");
+                    }
+                    else{
+                        $('#pass').attr("type","password");
+                        $('#cpass').attr("type","password");
+
+                    }
+                 });
+  
+
+                
+           
+    
+            function validation1new(){
+                $('#error1').html("");
+                    let fname=$('#firstname1').val();
+                    if(fname==""){
+                    $("#error1").html("--------This field is require----");
+                        return false
+                }
+                return true;
+               };
+        
+               function validation2new(){
+                let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,8})");
+                    $('#error2').html("");
+                    let pass=$('#pass').val();
+                if(pass==""){
+                    $('#error2').html("This field is required");
+                    return false;
+                }
+                if(strongRegex.test(pass)!=true){
+                    $("#error2").html("Password shoud have 1 capital,1 lowr,1 special,1 numeric ,min lengh 5 character");
+                    return false;
+                }
+                return true;
+               };
+              
+
+              
+        function validation3new(){
+            let pas=$("#pass").val();                
+                let cpas=$("#cpass").val();
+                $('#error3').html("");                
+                if(cpas==""){
+                    $("#error3").html("This field is required");
+                return false;
+                }
+                if(cpas!=pas){
+                    $("#error3").html("password should be match");
+                return false;
+                } 
+                return true;
+        };
+
+        function validation4new(){
+                let mobile=$("#mobile").val();
+                   
+                   if(isNaN(mobile)){
+                   $("#error4").html("only digit allow");                   
+                   return false;
+                }
+                if(mobile.length!=10){
+                   $("#error5").html("mob num must be 10 digit"); 
+                   return false;                   
+               } 
+               return true;
+               };
+      
+                    
+  
+
+        </script>
+    </body>
+</html>
